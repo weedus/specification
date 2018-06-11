@@ -9,32 +9,42 @@
 namespace Weedus\Specification\Numbers;
 
 
+use Assert\Assert;
+use Assert\Assertion;
 use Weedus\Specification\SpecificationInterface;
 
-class NumberBetweenSpecification implements SpecificationInterface
+class NumberBetween implements SpecificationInterface
 {
     /**
-     * @var float|null
+     * @var number
      */
     private $max;
 
     /**
-     * @var float|null
+     * @var number
      */
     private $min;
 
     /**
-     * @param float $minPrice
-     * @param float $maxPrice
+     * NumberBetween constructor.
+     * @param $min
+     * @param $max
      */
-    public function __construct(float $min, float $max)
+    public function __construct($min, $max)
     {
+        Assertion::allNumeric([$min,$max]);
         $this->min = $min;
         $this->max = $max;
     }
 
+    /**
+     * @param $item
+     * @return bool
+     * @throws \Assert\AssertionFailedException
+     */
     public function isSatisfiedBy($item): bool
     {
+        Assertion::numeric($item);
         if ($this->max !== null && $item > $this->max) {
             return false;
         }
