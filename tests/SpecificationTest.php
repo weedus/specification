@@ -1,8 +1,10 @@
 <?php
 namespace Weedus\Tests;
 
+use Assert\Assertion;
 use Weedus\Specification\AndSpecification;
 use Weedus\Specification\Equals;
+use Weedus\Specification\IsType;
 use Weedus\Specification\NotSpecification;
 use Weedus\Specification\Numbers\GreaterOrEqual;
 use Weedus\Specification\Numbers\GreaterThan;
@@ -148,5 +150,48 @@ class SpecificationTest extends \Codeception\Test\Unit
         $this->assertFalse($equals->isSatisfiedBy(10));
         $this->assertFalse($equals->isSatisfiedBy('bla'));
         $this->assertTrue($equals->isSatisfiedBy(true));
+    }
+
+    /**
+     * @throws \Assert\AssertionFailedException
+     */
+    public function testType()
+    {
+        $int = (int)1;
+        $double = (double)1.5;
+        $string = 'string';
+        $object = new \stdClass();
+
+        $isInteger = new IsType('integer');
+        $isDouble = new IsType('double');
+        $isString = new IsType('string');
+        $isObject = new IsType('object');
+
+        try {
+            new IsType('float');
+        }catch(\Exception $exception){
+            $this->assertContains('float not possible',$exception->getMessage());
+        }
+
+
+        $this->assertTrue($isInteger->isSatisfiedBy($int));
+        $this->assertFalse($isInteger->isSatisfiedBy($double));
+        $this->assertFalse($isInteger->isSatisfiedBy($string));
+        $this->assertFalse($isInteger->isSatisfiedBy($object));
+
+        $this->assertFalse($isDouble->isSatisfiedBy($int));
+        $this->assertTrue($isDouble->isSatisfiedBy($double));
+        $this->assertFalse($isDouble->isSatisfiedBy($string));
+        $this->assertFalse($isDouble->isSatisfiedBy($object));
+
+        $this->assertFalse($isString->isSatisfiedBy($int));
+        $this->assertFalse($isString->isSatisfiedBy($double));
+        $this->assertTrue($isString->isSatisfiedBy($string));
+        $this->assertFalse($isString->isSatisfiedBy($object));
+
+        $this->assertFalse($isObject->isSatisfiedBy($int));
+        $this->assertFalse($isObject->isSatisfiedBy($double));
+        $this->assertFalse($isObject->isSatisfiedBy($string));
+        $this->assertTrue($isObject->isSatisfiedBy($object));
     }
 }
