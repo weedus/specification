@@ -10,8 +10,9 @@ namespace Weedus\Specification\Objects;
 
 
 use Assert\Assertion;
+use Weedus\Specification\AbstractSpecification;
 
-class IsClass
+class IsClass extends AbstractSpecification
 {
     /** @var string */
     protected $class;

@@ -9,7 +9,7 @@
 namespace Weedus\Specification;
 
 
-class Equals implements SpecificationInterface
+class Equals extends AbstractSpecification
 {
     protected $item;
 

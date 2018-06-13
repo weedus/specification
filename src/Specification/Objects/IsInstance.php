@@ -10,9 +10,9 @@ namespace Weedus\Specification\Objects;
 
 
 use Assert\Assertion;
-use Weedus\Specification\SpecificationInterface;
+use Weedus\Specification\AbstractSpecification;
 
-class IsInstance implements SpecificationInterface
+class IsInstance extends AbstractSpecification
 {
     /** @var string */
     protected $class;

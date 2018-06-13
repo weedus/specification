@@ -11,7 +11,7 @@ namespace Weedus\Specification;
 
 use Assert\Assertion;
 
-class IsType implements SpecificationInterface
+class IsType extends AbstractSpecification
 {
     protected $type;
 

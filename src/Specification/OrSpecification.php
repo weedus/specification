@@ -9,7 +9,7 @@
 namespace Weedus\Specification;
 
 
-class OrSpecification implements SpecificationInterface
+class OrSpecification extends AbstractSpecification
 {
     /**
      * @var SpecificationInterface[]

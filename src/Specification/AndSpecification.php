@@ -9,7 +9,7 @@
 namespace Weedus\Specification;
 
 
-class AndSpecification implements SpecificationInterface
+class AndSpecification extends AbstractSpecification
 {
     /**
      * @var SpecificationInterface[]

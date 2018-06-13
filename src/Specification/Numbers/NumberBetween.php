@@ -8,12 +8,10 @@
 
 namespace Weedus\Specification\Numbers;
 
-
-use Assert\Assert;
 use Assert\Assertion;
-use Weedus\Specification\SpecificationInterface;
+use Weedus\Specification\AbstractSpecification;
 
-class NumberBetween implements SpecificationInterface
+class NumberBetween extends AbstractSpecification
 {
     /**
      * @var number

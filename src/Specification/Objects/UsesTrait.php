@@ -10,9 +10,9 @@ namespace Weedus\Specification\Objects;
 
 
 use Assert\Assertion;
-use Weedus\Specification\SpecificationInterface;
+use Weedus\Specification\AbstractSpecification;
 
-class UsesTrait implements SpecificationInterface
+class UsesTrait extends AbstractSpecification
 {
     protected $trait;
 

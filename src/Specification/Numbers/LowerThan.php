@@ -10,9 +10,9 @@ namespace Weedus\Specification\Numbers;
 
 
 use Assert\Assertion;
-use Weedus\Specification\SpecificationInterface;
+use Weedus\Specification\AbstractSpecification;
 
-class LowerThan implements SpecificationInterface
+class LowerThan extends AbstractSpecification
 {
     protected $max;
 
