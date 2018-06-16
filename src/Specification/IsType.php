@@ -8,7 +8,7 @@
 
 namespace Weedus\Specification;
 
-use Weedus\Specification\Exceptions\InvalidArgumentException;
+use Weedus\Exceptions\InvalidArgumentException;
 
 class IsType extends AbstractSpecification
 {

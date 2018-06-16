@@ -10,7 +10,7 @@ namespace Weedus\Specification\Objects;
 
 
 use Weedus\Specification\AbstractSpecification;
-use Weedus\Specification\Exceptions\InvalidArgumentException;
+use Weedus\Exceptions\InvalidArgumentException;
 
 abstract class AbstractObjectSpecification extends AbstractSpecification
 {

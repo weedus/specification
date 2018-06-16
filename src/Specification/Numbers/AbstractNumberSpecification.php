@@ -10,7 +10,7 @@ namespace Weedus\Specification\Numbers;
 
 
 use Weedus\Specification\AbstractSpecification;
-use Weedus\Specification\Exceptions\InvalidArgumentException;
+use Weedus\Exceptions\InvalidArgumentException;
 
 abstract class AbstractNumberSpecification extends AbstractSpecification
 {
