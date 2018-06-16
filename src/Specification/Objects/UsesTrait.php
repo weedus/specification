@@ -8,28 +8,23 @@
 
 namespace Weedus\Specification\Objects;
 
-
-use Assert\Assertion;
-use Weedus\Specification\AbstractSpecification;
-
-class UsesTrait extends AbstractSpecification
+class UsesTrait extends AbstractObjectSpecification
 {
     protected $trait;
 
     /**
      * UsesTrait constructor.
      * @param $trait
-     * @throws \Assert\AssertionFailedException
      */
     public function __construct($trait)
     {
-        Assertion::string($trait);
+        $this->validateString($trait);
         $this->trait = $trait;
     }
 
     public function isSatisfiedBy($item): bool
     {
-        Assertion::isObject($item);
+        $this->validateObject($item);
         $items = $this->getParentClasses($item);
         foreach($items as $item){
             $traits = class_uses($item);

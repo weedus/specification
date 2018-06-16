@@ -8,10 +8,7 @@
 
 namespace Weedus\Specification\Numbers;
 
-use Assert\Assertion;
-use Weedus\Specification\AbstractSpecification;
-
-class NumberBetween extends AbstractSpecification
+class NumberBetween extends AbstractNumberSpecification
 {
     /**
      * @var number
@@ -30,7 +27,8 @@ class NumberBetween extends AbstractSpecification
      */
     public function __construct($min, $max)
     {
-        Assertion::allNumeric([$min,$max]);
+        $this->validate($min);
+        $this->validate($max);
         $this->min = $min;
         $this->max = $max;
     }
@@ -38,11 +36,10 @@ class NumberBetween extends AbstractSpecification
     /**
      * @param $item
      * @return bool
-     * @throws \Assert\AssertionFailedException
      */
     public function isSatisfiedBy($item): bool
     {
-        Assertion::numeric($item);
+        $this->validate($item);
         if ($this->max !== null && $item > $this->max) {
             return false;
         }

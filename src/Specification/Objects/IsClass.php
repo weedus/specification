@@ -8,28 +8,24 @@
 
 namespace Weedus\Specification\Objects;
 
-
-use Assert\Assertion;
-use Weedus\Specification\AbstractSpecification;
-
-class IsClass extends AbstractSpecification
+class IsClass extends AbstractObjectSpecification
 {
     /** @var string */
     protected $class;
 
     /**
-     * IsInstance constructor.
+     * IsClass constructor.
      * @param $class
-     * @throws \Assert\AssertionFailedException
      */
     public function __construct($class)
     {
-        Assertion::string($class);
+        $this->validateString($class);
         $this->class = $class;
     }
 
     public function isSatisfiedBy($item): bool
     {
+        $this->validateObject($item);
         return $this->class === get_class($item);
     }
 }

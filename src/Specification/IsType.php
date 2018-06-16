@@ -8,8 +8,7 @@
 
 namespace Weedus\Specification;
 
-
-use Assert\Assertion;
+use Weedus\Specification\Exceptions\InvalidArgumentException;
 
 class IsType extends AbstractSpecification
 {
@@ -18,12 +17,12 @@ class IsType extends AbstractSpecification
     /**
      * IsType constructor.
      * @param $type
-     * @throws \Assert\AssertionFailedException
      */
     public function __construct($type)
     {
-        Assertion::string($type);
-        Assertion::notEq($type, 'float', 'float not possible');
+        if(!is_string($type)){
+            throw new InvalidArgumentException('must be string');
+        }
         $this->type = $type;
     }
 

@@ -8,33 +8,27 @@
 
 namespace Weedus\Specification\Numbers;
 
-
-use Assert\Assertion;
-use Weedus\Specification\AbstractSpecification;
-
-class LowerOrEqual extends AbstractSpecification
+class LowerOrEqual extends AbstractNumberSpecification
 {
     protected $max;
 
     /**
-     * LowerThan constructor.
+     * LowerOrEqual constructor.
      * @param $max
-     * @throws \Assert\AssertionFailedException
      */
     public function __construct($max)
     {
-        Assertion::numeric($max);
+        $this->validate($max);
         $this->max = $max;
     }
 
     /**
      * @param $item
      * @return bool
-     * @throws \Assert\AssertionFailedException
      */
     public function isSatisfiedBy($item): bool
     {
-        Assertion::numeric($item);
+        $this->validate($item);
         return $item <= $this->max;
     }
 }

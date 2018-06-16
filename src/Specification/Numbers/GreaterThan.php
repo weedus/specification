@@ -8,33 +8,27 @@
 
 namespace Weedus\Specification\Numbers;
 
-
-use Assert\Assertion;
-use Weedus\Specification\AbstractSpecification;
-
-class GreaterThan extends AbstractSpecification
+class GreaterThan extends AbstractNumberSpecification
 {
     protected $min;
 
     /**
      * GreaterThan constructor.
      * @param $min
-     * @throws \Assert\AssertionFailedException
      */
     public function __construct($min)
     {
-        Assertion::numeric($min);
+        $this->validate($min);
         $this->min = $min;
     }
 
     /**
      * @param $item
      * @return bool
-     * @throws \Assert\AssertionFailedException
      */
     public function isSatisfiedBy($item): bool
     {
-        Assertion::numeric($item);
+        $this->validate($item);
         return $item > $this->min;
     }
 }

@@ -67,9 +67,6 @@ class SpecificationTest extends \Codeception\Test\Unit
         $this->assertFalse($notSpec->isSatisfiedBy(50));
     }
 
-    /**
-     * @throws \Assert\AssertionFailedException
-     */
     public function testNumericSpecs()
     {
         $greater = new GreaterThan(0);
@@ -92,9 +89,6 @@ class SpecificationTest extends \Codeception\Test\Unit
         $this->assertFalse($lowerEqual->isSatisfiedBy(101));
     }
 
-    /**
-     * @throws \Assert\AssertionFailedException
-     */
     public function testObjectSpecs()
     {
         $test1 = new SpecTest1();
@@ -152,9 +146,7 @@ class SpecificationTest extends \Codeception\Test\Unit
         $this->assertTrue($equals->isSatisfiedBy(true));
     }
 
-    /**
-     * @throws \Assert\AssertionFailedException
-     */
+
     public function testType()
     {
         $int = (int)1;
