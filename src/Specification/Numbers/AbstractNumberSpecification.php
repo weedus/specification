@@ -10,7 +10,6 @@ namespace Weedus\Specification\Numbers;
 
 
 use Weedus\Specification\AbstractSpecification;
-use Weedus\Exceptions\InvalidArgumentException;
 
 abstract class AbstractNumberSpecification extends AbstractSpecification
 {
@@ -18,7 +17,8 @@ abstract class AbstractNumberSpecification extends AbstractSpecification
     protected function validate($value)
     {
         if(!is_numeric($value)){
-            throw new InvalidArgumentException('value must be numeric');
+            return false;
         }
+        return true;
     }
 }

@@ -21,7 +21,8 @@ abstract class AbstractObjectSpecification extends AbstractSpecification
     }
     protected function validateObject($object){
         if(!is_object($object)){
-            throw new InvalidArgumentException('must be Object');
+            return false;
         }
+        return true;
     }
 }

@@ -39,7 +39,9 @@ class NumberBetween extends AbstractNumberSpecification
      */
     public function isSatisfiedBy($item): bool
     {
-        $this->validate($item);
+        if(!$this->validate($item)){
+            return false;
+        }
         if ($this->max !== null && $item > $this->max) {
             return false;
         }

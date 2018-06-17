@@ -25,7 +25,9 @@ class IsClass extends AbstractObjectSpecification
 
     public function isSatisfiedBy($item): bool
     {
-        $this->validateObject($item);
+        if(!$this->validateObject($item)){
+            return false;
+        }
         return $this->class === get_class($item);
     }
 }

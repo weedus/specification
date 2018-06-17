@@ -24,7 +24,9 @@ class UsesTrait extends AbstractObjectSpecification
 
     public function isSatisfiedBy($item): bool
     {
-        $this->validateObject($item);
+        if(!$this->validateObject($item)){
+            return false;
+        }
         $items = $this->getParentClasses($item);
         foreach($items as $item){
             $traits = class_uses($item);

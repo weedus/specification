@@ -25,7 +25,9 @@ class IsInstance extends AbstractObjectSpecification
 
     public function isSatisfiedBy($item): bool
     {
-        $this->validateObject($item);
+        if(!$this->validateObject($item)){
+            return false;
+        }
         return is_a($item, $this->class);
     }
 }

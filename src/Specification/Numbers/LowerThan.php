@@ -28,7 +28,9 @@ class LowerThan extends AbstractNumberSpecification
      */
     public function isSatisfiedBy($item): bool
     {
-        $this->validate($item);
+        if(!$this->validate($item)){
+            return false;
+        }
         return $item < $this->max;
     }
 }
