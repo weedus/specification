@@ -1,5 +1,5 @@
 <?php
-namespace Weedus\Tests;
+namespace Weedus\Specification\Tests;
 
 use Assert\Assertion;
 use Weedus\Specification\AndSpecification;
@@ -15,10 +15,10 @@ use Weedus\Specification\Objects\IsClass;
 use Weedus\Specification\Objects\IsInstance;
 use Weedus\Specification\Objects\UsesTrait;
 use Weedus\Specification\OrSpecification;
-use Weedus\Tests\Helper\SpecTest1;
-use Weedus\Tests\Helper\SpecTest1Child;
-use Weedus\Tests\Helper\SpecTest2;
-use Weedus\Tests\Helper\SpecTrait1;
+use Weedus\Specification\Tests\Helper\SpecTest1;
+use Weedus\Specification\Tests\Helper\SpecTest1Child;
+use Weedus\Specification\Tests\Helper\SpecTest2;
+use Weedus\Specification\Tests\Helper\SpecTrait1;
 
 class SpecificationTest extends \Codeception\Test\Unit
 {

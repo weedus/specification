@@ -6,7 +6,7 @@
  * Time: 23:36
  */
 
-namespace Weedus\Tests\Helper;
+namespace Weedus\Specification\Tests\Helper;
 
 
 class SpecTest2

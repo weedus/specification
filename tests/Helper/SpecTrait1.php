@@ -6,7 +6,7 @@
  * Time: 23:53
  */
 
-namespace Weedus\Tests\Helper;
+namespace Weedus\Specification\Tests\Helper;
 
 
 trait SpecTrait1
