@@ -1,7 +1,6 @@
 <?php
 namespace Weedus\Specification\Tests;
 
-use Assert\Assertion;
 use Weedus\Specification\AndSpecification;
 use Weedus\Specification\Equals;
 use Weedus\Specification\IsType;
