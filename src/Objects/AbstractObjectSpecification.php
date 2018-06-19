@@ -16,7 +16,7 @@ abstract class AbstractObjectSpecification extends AbstractSpecification
 {
     protected function validateString($string){
         if(!is_string($string)){
-            throw new InvalidArgumentException('must be string');
+            throw new InvalidArgumentException('string',gettype($string));
         }
     }
     protected function validateObject($object){

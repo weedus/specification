@@ -21,7 +21,7 @@ class IsType extends AbstractSpecification
     public function __construct($type)
     {
         if(!is_string($type)){
-            throw new InvalidArgumentException('must be string');
+            throw new InvalidArgumentException('string', gettype($type));
         }
         $this->type = $type;
     }
