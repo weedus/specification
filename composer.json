@@ -1,5 +1,6 @@
 {
   "name": "weedus/specification",
+  "description": "follows the specification pattern",
   "license": "MIT",
   "authors": [
     {
@@ -13,7 +14,7 @@
     "weedus/exceptions": ">=0.0.1"
   },
   "require-dev": {
-    "codeception/codeception": ">=2.4.1"
+    "codeception/codeception": "^2.4"
   },
   "autoload": {
     "psr-4": {
